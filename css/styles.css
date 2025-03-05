@@ -1,0 +1,37 @@
+#game-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 80px); /* 将宽度从 50px 调整为 80px */
+    grid-template-rows: repeat(8, 80px);    /* 将高度从 50px 调整为 80px */
+    gap: 8px; /* 增加间距 */
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.tile {
+    width: 80px; /* 将宽度从 50px 调整为 80px */
+    height: 80px; /* 将高度从 50px 调整为 80px */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px; /* 将字体大小从 20px 调整为 28px */
+    border-radius: 8px; /* 可选：增加圆角 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 可选：增加阴影 */
+}
+
+.tile.selected {
+    background-color: #a0d8ef;
+    border: 2px solid #007bff; /* 选中时增加边框 */
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 24px;
+}
