@@ -140,3 +140,46 @@ body {
 #restart-game:hover {
     background-color: #218838;
 }
+/* 提示信息样式 */
+#upload-hint {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#upload-hint strong {
+    color: #333;
+}
+
+#upload-hint ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+#upload-hint ul li {
+    margin-bottom: 5px;
+}
+
+#upload-hint code {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+#upload-hint a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#upload-hint a:hover {
+    text-decoration: underline;
+}

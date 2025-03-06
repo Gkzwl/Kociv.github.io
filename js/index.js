@@ -1,4 +1,4 @@
-     document.getElementById('load-csv').addEventListener('click', () => {
+ document.getElementById('load-csv').addEventListener('click', () => {
             const file = document.getElementById('csv-file').files[0];
             if (file) {
                 const reader = new FileReader();
@@ -11,4 +11,4 @@
             } else {
                 alert('请先选择一个 CSV 文件！');
             }
-        });// JavaScript Document
+			});

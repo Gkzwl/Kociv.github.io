@@ -14,7 +14,17 @@
             <input type="file" id="csv-file" accept=".csv">
             <button id="load-csv">加载词库</button>
         </div>
+        <!-- 提示信息 -->
+        <div id="upload-hint">
+            <p><strong>上传文件格式要求：</strong></p>
+            <ul>
+                <li>文件必须是 CSV 格式。</li>
+                <li>文件必须包含两列：<strong>中文</strong> 和 <strong>英文</strong>。</li>
+                <li>每行表示一对词汇，例如：<code>苹果,Apple</code>。</li>
+            </ul>
+            <p>示例文件：<a href="csv/words.csv" download>下载示例 CSV 文件</a></p>
+        </div>
     </div>
-    <script src="js/index.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
