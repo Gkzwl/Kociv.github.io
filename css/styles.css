@@ -1,37 +1,142 @@
+/* CSS Document */
+
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#welcome-screen {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#welcome-screen h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#welcome-screen p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#csv-file {
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#load-csv {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#load-csv:hover {
+    background-color: #0056b3;
+}
+
 #game-container {
     text-align: center;
-    margin-top: 50px;
 }
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(8, 80px); /* 将宽度从 50px 调整为 80px */
-    grid-template-rows: repeat(8, 80px);    /* 将高度从 50px 调整为 80px */
-    gap: 8px; /* 增加间距 */
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    gap: 8px;
     margin: 0 auto;
     width: fit-content;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#game-board.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .tile {
-    width: 80px; /* 将宽度从 50px 调整为 80px */
-    height: 80px; /* 将高度从 50px 调整为 80px */
+    width: 80px;
+    height: 80px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 16px; /* 将字体大小从 20px 调整为 28px */
-    border-radius: 8px; /* 可选：增加圆角 */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 可选：增加阴影 */
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0);
+    animation: tileAppear 0.5s forwards;
+}
+
+@keyframes tileAppear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .tile.selected {
     background-color: #a0d8ef;
-    border: 2px solid #007bff; /* 选中时增加边框 */
+    border: 2px solid #007bff;
 }
 
 #score {
     margin-top: 20px;
     font-size: 24px;
+    color: #333;
+}
+
+#restart-game {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restart-game:hover {
+    background-color: #218838;
 }

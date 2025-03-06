@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>连连看游戏</title>
+    <title>连连看游戏 - 开始</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="game-container">
-        <div id="game-board"></div>
-        <div id="score">得分: 0</div>
+    <div id="welcome-screen">
+        <h1>欢迎来到连连看游戏！</h1>
+        <p>请上传 CSV 文件以加载词库。</p>
+        <div id="upload-section">
+            <input type="file" id="csv-file" accept=".csv">
+            <button id="load-csv">加载词库</button>
+        </div>
     </div>
-    <script src="js/script2.js"></script>
-    <audio id="click-sound" src="audio/click.mp3"></audio>
-	<audio id="match-sound" src="audio/match.mp3"></audio>
-
+    <script src="js/index.js"></script>
 </body>
 </html>
