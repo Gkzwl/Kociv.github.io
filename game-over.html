@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏结束</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-over-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .final-score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .restart-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .restart-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-over-container">
+        <div class="final-score" id="final-score">最终得分: 100</div>
+        <button class="restart-button" id="restart-game-end">重新开始</button>
+    </div>
+
+    <script>
+        // 从 URL 参数中获取最终得分
+        const urlParams = new URLSearchParams(window.location.search);
+        const finalScore = urlParams.get('score');
+        
+        // 更新得分显示
+        const finalScoreDisplay = document.getElementById('final-score');
+        finalScoreDisplay.textContent = `最终得分: ${finalScore}`;
+
+        // 重新开始游戏
+        document.getElementById('restart-game-end').addEventListener('click', () => {
+            window.location.href = 'index.html'; // 返回开始页面
+        });
+    </script>
+</body>
+</html>
